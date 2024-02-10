@@ -10,7 +10,8 @@ public:
     virtual ~CEGKKHoldingPointsPlugin();
     //virtual void OnFunctionCall(int FunctionId, const char* ItemString, POINT Pt, RECT Area);
     //virtual bool Enabled(EuroScopePlugIn::CFlightPlan flightPlan);
-    virtual void OnGetTagItem(EuroScopePlugIn::CFlightPlan FlightPlan,
+    virtual void OnRefreshFpListContent(EuroScopePlugIn::CFlightPlanList AcList);
+    /*virtual void OnGetTagItem(EuroScopePlugIn::CFlightPlan FlightPlan,
         EuroScopePlugIn::CRadarTarget RadarTarget,
         int ItemCode,
         int TagData,
@@ -18,11 +19,10 @@ public:
         int* pColorCode,
         COLORREF* pRGB,
         double* pFontSize
-    );
-
-    virtual void sendMessage(std::string message);
+    );*/
+    virtual bool OnCompileCommand(const char* sCommandLine);
 
 private:
-    bool InGroup(const char* dest, const char* rte, int group);
+    virtual void sendMessage(std::string message);
 };
 
